@@ -1,0 +1,504 @@
+:root {
+    --primary: #2487ce;
+    --text: #222222;
+    --muted: #666666;
+    --light-bg: #f6fbff;
+    --footer-bg: #fffaf7;
+    --orange: #f36b2b;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+a { 
+    color: inherit; 
+    text-decoration: none; 
+}
+
+img { 
+    display: block; 
+    max-width: 100%; 
+    height: auto;
+}
+
+.container { 
+    width: min(100% - 100px, 1200px); 
+    margin: 0 auto; 
+}
+
+/*menu*/
+.s-header { 
+    background: #fff; 
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-inner {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+}
+
+.main-nav > ul {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.main-nav li { 
+    position: relative; 
+}
+
+.main-nav a { 
+    color: #555; 
+    transition: color .2s ease; 
+}
+
+.main-nav a:hover, 
+.main-nav a.active { 
+    color: var(--primary); 
+}
+
+.main-nav i { 
+    vertical-align: middle; 
+}
+
+.login-button {
+    display: inline-block;
+    padding: 7px 21px;
+    border-radius: 20px;
+    color: #fff !important;
+    background: var(--primary);
+    transition: background .2s ease;
+}
+
+.login-button:hover {
+    background: #1b6ca5;
+}
+
+/* Menu cấp 2 (Dropdown) */
+.dropdown-menu {
+    position: absolute;
+    z-index: 100;
+    top: 24px;
+    left: -18px;
+    width: 140px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: .2s ease;
+}
+
+.dropdown:hover .dropdown-menu, 
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.dropdown-menu a { 
+    display: block; 
+    padding: 7px 17px; 
+    font-size: 11px;
+    color: #555;
+}
+
+.dropdown-menu a:hover {
+    color: var(--primary);
+    background-color: #f7fbff;
+}
+
+/*banner*/
+.banner {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.banner-content {
+    flex: 1;
+}
+
+.banner-content h1 {
+    margin: 0 0 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111;
+}
+
+.banner-content p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.btn-get-started {
+    display: inline-block;
+    padding: 6px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+.btn-get-started:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.banner-img {
+    flex: 0 0 52%;
+}
+
+.banner-img img {
+    width: 100%;
+}
+
+/*may cai section title*/
+.section-title {
+    text-align: center;
+}
+
+.section-title h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #111;
+}
+
+.section-title h2 span {
+    width: 27px;
+    height: 1.5px;
+    background: var(--primary);
+}
+
+.section-title p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/*about*/
+.about-section {
+    padding: 30px 0 45px;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-top: 28px;
+}
+
+.about-image {
+    flex: 0 0 43%;
+}
+
+.about-counts {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 45px;
+}
+
+.count-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.count-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.count-top i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.count-top span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+}
+
+.count-box p {
+    margin: 2px 0 0;
+    color: #777;
+    font-size: 8px;
+    line-height: 1.45;
+}
+
+.count-box p strong {
+    color: #333;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+/*testimonials*/
+.testimonials-section {
+    background: var(--light-bg);
+    padding: 30px 0 35px;
+}
+
+.testimonials-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin: 22px 25px 0;
+}
+
+.testimonial-item {
+    display: flex;
+    gap: 10px;
+    min-height: 140px;
+    padding: 17px 20px 15px 0;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-left: -20px;
+    flex-shrink: 0;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial-content h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #111;
+}
+
+.testimonial-content h4 {
+    margin: 2px 0 0;
+    font-size: 9px;
+    font-weight: 400;
+    color: #999;
+}
+
+.testimonial-content p {
+    margin: 10px 0 0;
+    color: #777;
+    font-size: 10px;
+    font-style: italic;
+    line-height: 1.55;
+}
+
+.quote-icon-left,
+.quote-icon-right {
+    color: #d7efff;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/*footer*/
+.footer {
+    background: var(--footer-bg);
+    padding: 12px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8px;
+    color: #444;
+}
+
+.footer-inner p {
+    margin: 0;
+}
+
+.credits a {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Nút quay lại đầu trang */
+.back-to-top {
+    position: fixed;
+    right: 10px;
+    bottom: 8px;
+    padding: 6px 8px;
+    border-radius: 3px;
+    color: #fff;
+    background: var(--orange);
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s ease;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background: #d85718;
+}
+
+
+@media (max-width: 768px) {
+    .container { 
+        width: min(100% - 36px, 520px); 
+    }
+
+    .header-inner, 
+    .banner-inner, 
+    .about-wrapper { 
+        flex-direction: column; 
+    }
+
+    .header-inner { 
+        gap: 15px; 
+        padding: 15px 0; 
+    }
+
+    .main-nav > ul { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 12px 18px; 
+    }
+
+    .banner { 
+        padding-top: 30px; 
+        text-align: center; 
+    }
+
+    .banner-img { 
+        flex-basis: auto; 
+        margin-top: 25px; 
+    }
+
+    .banner-content h1 { 
+        font-size: 25px; 
+    }
+
+    .desktop-only { 
+        display: none; 
+    }
+
+    .about-wrapper { 
+        gap: 25px; 
+    }
+
+    .about-image { 
+        flex-basis: auto; 
+    }
+
+    .about-counts, 
+    .testimonials-wrapper { 
+        grid-template-columns: 1fr; 
+    }
+
+    .testimonials-wrapper { 
+        gap: 25px; 
+        margin: 18px 20px 0; 
+    }
+
+    .footer-inner { 
+        gap: 10px; 
+        flex-direction: column; 
+        text-align: center; 
+    }
+}
+
+.banner img{
+    width: 100%;
+
+}
+
+.display-flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-left h1{
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.banner-left h2{
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.btn-start{
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff !important;
+    background: var(--primary);
+}
